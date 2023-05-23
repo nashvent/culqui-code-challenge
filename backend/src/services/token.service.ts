@@ -4,7 +4,7 @@ import { CreateTokenDto } from "../dto/token.dto";
 
 export const createToken = async (data: CreateTokenDto): Promise<typeof TokenModel | any> => {
     const token = await TokenModel.create({
-        code: `pk_test_${generateRandomString(16)}`,
+        code: `${generateRandomString(16)}`,
         cardNumber: data.cardNumber,
         cvv: data.cvv,
         expirationMonth: data.expirationMonth,
